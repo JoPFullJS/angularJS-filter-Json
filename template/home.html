@@ -1,0 +1,109 @@
+
+<div ng-include="'template/includes/header.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12"><!-- Right sidebar-->
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading" >
+                    <h3 class="panel-title">brands
+                        <span class="pull-right open-btn" data-toggle="collapse" data-target="#toggle-brands" aria-expanded="false"><i class="fa fa-angle-double-down"></i></span>
+                    </h3>
+                </div>
+                <div class="collapse navbar-collapse" id="toggle-brands">
+                <div class="panel-body">
+
+
+                    <ul class="nav nav-pills nav-stacked">
+                        <li style="display:inline-block !important;"><a ui-sref="home">All</a></li>
+                        <li style="display:inline-block !important;" ng-repeat="item in off.categories | unique:'brands'" ><a ui-sref=".brands({productCat: item.brands})">{{item.brands}}</a></li>
+                    </ul>
+
+                </div>
+                </div>
+            </div>
+
+
+        </div><!-- End right sidebar-->
+        <div ui-view>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <form class="navbar-form">
+                <div class="input-group col-md-12 col-sm-12 col-xs-12">
+                    <input type="text" class="form-control" ng-model="off.search" placeholder="Trouvez votre produit...">
+                </div>
+            </form>
+          </div>
+
+          <div class="col-md-3">
+
+            <div class="margin-bottom">
+                <div>
+                    Quantité en gramme
+                    <button class="btn btn-xs btn-danger pull-right" ng-click="off.resetQuantity(off.quantityFilter)">
+                        <i class="icon-times-circle"></i> Reset
+                    </button>
+                </div>
+                <div>
+                    <rzslider rz-slider-model="off.quantityFilter.minValue" rz-slider-high="off.quantityFilter.maxValue"
+                              rz-slider-options="off.quantityFilter.options"></rzslider>
+                </div>
+            </div>
+            <div class="margin-bottom">
+              <div>
+                  Sucre par 100g
+                  <button class="btn btn-xs btn-danger pull-right" ng-click="off.resetSucre(off.sucreFilter)">
+                      <i class="icon-times-circle"></i> Reset
+                  </button>
+              </div>
+                <div>
+                    <rzslider rz-slider-model="off.sucreFilter.minValue" rz-slider-high="off.sucreFilter.maxValue"
+                              rz-slider-options="off.sucreFilter.options"></rzslider>
+                </div>
+            </div>
+            <div class="margin-bottom">
+              <div>
+                  Matière frasse par 100g
+                  <button class="btn btn-xs btn-danger pull-right" ng-click="off.resetFat(off.fatFilter)">
+                      <i class="icon-times-circle"></i> Reset
+                  </button>
+              </div>
+                <div>
+                    <rzslider rz-slider-model="off.fatFilter.minValue" rz-slider-high="off.fatFilter.maxValue"
+                              rz-slider-options="off.fatFilter.options"></rzslider>
+                </div>
+            </div>
+          </div>
+
+        <div class="col-md-9">
+            <div class="alert alert-warning open-box" ng-show="(off.products | filter:off.filterRange).length==0">
+                <h3>Opps! No product match. Try another.</h3>
+            </div>
+            <div class="col-md-4 open-thumbnail"
+                 ng-repeat="item in filteredlist = (off.products | filter:off.filterRange).slice(((off.currentPage-1)*off.itemsPerPage), ((off.currentPage)*off.itemsPerPage)) ">
+                <div class="thumbnail">
+                    <img class="open-img" ng-src="{{item.image_small_url}}" alt="...">
+                    <div class="caption">
+                        <h3 class="lead">{{ item.product_name | limitTo:20 }}{{item.product_name.length < 20 ? '' : '...'}}</h3>
+                        <small><strong>Marque : {{ item.brands }}</strong></small>
+                        <h4>Quantité : {{ item.quantity | currency:"" }} g</h4>
+                        <p>Portions : {{ item.parts }}</p>
+                        <p>Sucre / 100g : {{ item.nutriments.sugars | currency:"" }} g</p>
+                        <p>Graisse / 100g : {{ item.nutriments.fat | currency:"" }} g</p>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-3">
+                                <a ui-sref="detail({productID: item._id})" class="btn btn-sm btn-success">Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 pull-right" ng-show="(off.products | filter:off.filterRange).length>off.itemsPerPage">
+                <ul uib-pagination total-items='(off.products | filter:off.filterRange).length' items-per-page="off.itemsPerPage"
+                                ng-model="off.currentPage"></ul>
+            </div>
+        </div>
+    </div>
+    </div><!--End container-->
+</div>

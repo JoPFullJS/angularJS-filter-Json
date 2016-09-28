@@ -1,0 +1,33 @@
+<div ng-include="'template/includes/header.html'"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!--Page header-->
+            <div class="open-page-header">
+                <h3>brands > <a ui-sref="home.brands({productCat: off.product.brands})">{{off.product.brands}}</a></h3>
+            </div>
+            <!--Product details--->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2>{{ off.product.product_name }}<br>
+                        <small><strong>Code Barre Produit - {{ off.product._id }}</strong></small>
+                        <strong class="pull-right">{{ off.product.quantity | currency:"" }} g</strong>
+                    </h2>
+                    <img class="open-img-bg" ng-src="{{off.product.image_url}}"/>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3>Product details</h3>
+                    <p>{{ off.product.parts }}</p>
+                    <h3>brands</h3>
+                    <p class="open-category">{{ off.product.brands }}</p>
+                </div>
+            </div>
+            <!---End product detail--->
+        </div>
+
+
+    </div>
+</div>

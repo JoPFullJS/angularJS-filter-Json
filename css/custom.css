@@ -1,0 +1,262 @@
+/*
+ * Globals
+ */
+
+body {
+    background-color:#f5f5f5;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    margin-top: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: norm<ul>
+		<li><p>You can easily change style with this file if you want.</p></li>
+		<li><p>Custom style used with open prefix.</p></li>
+		<li><p>You can change body background color</p></li>
+		<li><p>You can header and footer color also from here.</p></li>
+	</ul>al;
+    color: #333;
+}
+a {
+    color: #007dc2;
+}
+/*** End global ***/
+
+.open-box {
+    background-color:#fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.input-group-addon {
+    background-color: #007dc2;
+    color: #fff;
+    border: 1px solid #007dc2;
+}
+
+.open-btn {
+    display : none;
+}
+
+.open-page-header {
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.open-category{
+    list-style:none;
+    text-transform: capitalize;
+    text-align:left !important;
+}
+
+.open-category a {
+    text-decoration: none;
+}
+
+.open-img {
+    -webkit-transition: width .5s, height .5s, -webkit-transform .5s; /* Safari */
+    transition: width .5s, height .5s, transform .5s;
+    max-height: 130px;
+}
+
+.open-img:hover {
+    -webkit-transform: rotateY(180deg); /* Safari */
+    transform: rotateY(180deg); /* Standard syntax */
+}
+
+.open-img-bg {
+    width:100%;
+     -webkit-transition: width .5s, height .5s, -webkit-transform .5s; /* Safari */
+    transition: width .5s, height .5s, transform .5s;
+}
+
+.open-cart-summery {
+    float: right !important;
+    margin-top: 9px;
+}
+
+.input-group-addon {
+    background-color:#5bc0de;
+    color:#fff;
+}
+
+.open-navbar {
+   
+    padding: 10px 0px;
+}
+
+.open-logo-img {
+    
+    padding-left:5%;
+}
+
+.thumbnail:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.open-thanks {
+    padding: 10%;
+}
+
+.open-page {
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    padding: 30px;
+}
+
+
+/*
+ * Social icons
+ */
+.gplus {
+    color: #c21f25;
+}
+
+.twitter {
+    color: #3cf;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.pinterest {
+    color: #C92228;
+}
+
+.instagram {
+    color: #cd4378;
+}
+
+a .icon-stack, a .icon-spin {
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+
+/*** End social ***/
+
+
+/*
+ * Footer
+ */
+ .open-footer {
+    margin-bottom:0;
+    padding: 20px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 10px;
+}
+
+.open-footer p:last-child {
+    margin-bottom: 0;
+}
+
+.open-footer h3 {
+    color:#333;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.open-twitter:hover {
+    color: #3cf;
+}
+
+.open-facebook:hover {
+    color: #3b5998;
+}
+
+.open-pinterest:hover {
+    color: #C92228;
+}
+
+.open-gplus:hover {
+    color: #c21f25;
+}
+
+.open-instagram:hover {
+    color: #cd4378;
+}
+
+.open-social {
+    padding-left: 16%;
+}
+.margin-bottom{
+margin-bottom:20px;
+}
+/*** End footer ***/
+
+/*
+ * Media query for phone and tablet device
+ */
+@media only screen and (max-width: 500px) {
+    .open-box {
+        padding: 0;
+    }
+    .open-cart-summery {
+        float: right !important;
+        margin-top: 18px;
+    }
+    .open-thumbnail {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    .open-btn {
+         display: block;
+    }
+
+    .table {
+        table-layout: fixed;
+        word-break: break-all;
+    }
+
+    .table-action {
+        width: 10%;
+    }
+
+    .open-social {
+        padding-left: 16%;
+        font-size: 12px;
+    }
+    .open-page {
+        margin: 10px 14px;
+        padding: 15px;
+    }
+    .open-banner {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .open-thumbnail {
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+
+    .open-social {
+        padding-left: 33%;
+    }
+
+    .open-page {
+        margin: 10px 14px;
+    }
+
+    .open-banner {
+        width: 100%;
+        height: 300px;
+    }
+}

@@ -1,0 +1,97 @@
+<footer class="footer open-footer">
+    <div class="container">
+        <div class="row">
+            <!-- **Page lists**
+            --------------------------------->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <ul class="open-category">
+                    <h3>Pages</h3>
+                    <li><a ui-sref="about"> About us</a></li>
+                    <li><a ui-sref="conditions"> Terms & condition</a></li>
+                    <li><a ui-sref="faq"> FAQ</a></li>
+                    <li><a ui-sref="contact"> Contact us</a></li>
+                </ul>
+            </div>
+
+            <!-- **Category lists**
+            --------------------------------->
+            <div class="col-md-2 col-sm-4 col-xs-6">
+                <ul class="open-category">
+                    <h3>Top Category</h3>
+                    <li ng-repeat="item in off.products | unique:'category'">
+                        <a ui-sref="home.category({productCat: item.category})">{{item.category}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- **Address**
+            ----------------------------------->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <h3>Where to find us</h3>
+                <address>
+                  <strong>themeZO Inc.</strong><br>
+                  Level: 4, House: 1, Road: 1, Sector: 6<br>
+                  Uttara, Dhaka-1230<br>
+                  <abbr title="Phone">P:</abbr> (88) 018-48-346300
+                </address>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-xs-12">
+                <div class="row">
+                    <h3>Get the news</h3>
+                    <form class="form-inline">
+                        <div class="form-group col-xs-10 col-xs-offset-1">
+                            <input type="email" class="form-control" id="subscribe" placeholder="email@example.com">
+                            <button type="submit" class="btn btn-default">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+                <hr/>
+
+                <!-- **Social links**
+                ------------------------------->
+                <div class="row open-social">
+                    <div class="text-center">
+                    <a href="#">
+                        <span class="icon-stack open-facebook icon-2x">
+                          <i class="icon-circle icon-stack-base"></i>
+                          <i class="icon-facebook icon-light"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="icon-stack open-twitter icon-2x">
+                          <i class="icon-circle icon-stack-base"></i>
+                          <i class="icon-twitter icon-light"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="icon-stack open-gplus icon-2x">
+                          <i class="icon-circle icon-stack-base"></i>
+                          <i class="icon-google-plus icon-light"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="icon-stack open-pinterest icon-2x">
+                          <i class="icon-circle icon-stack-base"></i>
+                          <i class="icon-pinterest icon-light"></i>
+                        </span>
+                    </a>
+                    <a href="#">
+                        <span class="icon-stack open-instagram icon-2x">
+                          <i class="icon-circle icon-stack-base"></i>
+                          <i class="icon-instagram icon-light"></i>
+                        </span>
+                    </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+
+        <!-- **Copy right**
+        --------------------------------->
+        <div class="row">
+            <p>Proudly made in Dhaka. &copy; 2016 Company, Inc.</p>
+        </div>
+    </div>
+</footer>
